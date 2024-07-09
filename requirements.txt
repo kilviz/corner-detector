@@ -1,0 +1,9 @@
+django
+flake8
+radon
+bandit
+coverage
+autopep8
+opencv-python
+django-rest-swagger
+djangorestframework
