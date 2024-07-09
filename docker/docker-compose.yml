@@ -1,0 +1,9 @@
+version: '0.1'
+
+services:
+
+  corner-detector:
+    build: detector
+    restart: always
+    ports:
+      - '8000:8000'
