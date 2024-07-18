@@ -1,8 +1,9 @@
 from rest_framework import serializers
 
+from detector.models import Image
 
-class ParseImageSerializer(serializers.Serializer):
 
-    images = serializers.ListField(
-        child=serializers.ImageField(), required=True)
-    csv_file = serializers.FileField(required=True)
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Image
+        fields = ['id', 'image']

@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SWAGGER_SETTINGS = {
+    'DEFAULT_INFO': 'app.settings'
+}
 
 # Application definition
 
@@ -39,7 +42,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'detector.apps.DetectorConfig',
     'rest_framework',
-    'drf_yasg',
+    'drf_spectacular',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -119,8 +123,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+MEDIA_URL = 'backend/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': '',
+    'DESCRIPTION': '',
+    'VERSION': '1.0.0',
+    'COMPONENT_SPLIT_REQUEST': True
+}

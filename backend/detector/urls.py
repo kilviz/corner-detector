@@ -1,8 +1,7 @@
-from rest_framework import routers
-
+from django.urls import path
 from detector import views
 
-router = routers.DefaultRouter()
-router.register('', views.ImageParserView, basename='parse_image')
-
-urlpatterns = router.urls
+urlpatterns = [
+    path('parse_image', views.ImageProcessingView.as_view(),
+         name='parse_image')
+]
