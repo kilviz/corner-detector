@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-3+l$+3b=#s(_74xj9jaf3i^7g59*_+dcr9vvutjr!wg0ai$qx^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 SWAGGER_SETTINGS = {
     'DEFAULT_INFO': 'app.settings'
