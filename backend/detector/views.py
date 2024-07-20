@@ -1,19 +1,14 @@
 
-from django.http import HttpResponse, JsonResponse
+from django.http import JsonResponse
 
-from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.viewsets import GenericViewSet
 from detector.source_code.boxdetector import ImageDetector
 from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
-from rest_framework.response import Response
 from rest_framework.views import APIView
-from .models import Image
 from .serializers import ImageSerializer
 from rest_framework.permissions import IsAuthenticated
-from django.core.files.base import ContentFile
-from drf_spectacular.utils import extend_schema, OpenApiParameter
+from drf_spectacular.utils import extend_schema
 
 # detector = ImageDetector(image_path)
 # response_json = json.dumps(detector.run())
