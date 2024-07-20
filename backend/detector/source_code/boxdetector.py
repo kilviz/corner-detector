@@ -104,7 +104,7 @@ class ImageDetector:
             }
         filename = "output/output.json"
         os.makedirs(os.path.dirname(filename), exist_ok=True)
-        with open(filename, "a+") as file:
+        with open(filename, "w") as file:
             json.dump(output, file)
         return (output)
 
