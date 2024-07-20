@@ -2,6 +2,7 @@ import cv2
 import numpy as np
 import json
 from math import sqrt
+import os
 
 
 class ImageDetector:
@@ -97,12 +98,14 @@ class ImageDetector:
         for id, box in enumerate(self.boxes):
             output[id] = {
                 "x1": float(box[0][0]), "y1": float(box[0][1]),
-                "x2": float(box[0][0]), "y2": float(box[1][1]),
-                "x3": float(box[0][0]), "y3": float(box[2][1]),
-                "x4": float(box[0][0]), "y4": float(box[3][1])
+                "x2": float(box[1][0]), "y2": float(box[1][1]),
+                "x3": float(box[2][0]), "y3": float(box[2][1]),
+                "x4": float(box[3][0]), "y4": float(box[3][1])
             }
-        # with open("source_code/output/output.json", "w") as file:
-        #    json.dump(output, file)
+        filename = "output/output.json"
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        with open(filename, "a+") as file:
+            json.dump(output, file)
         return (output)
 
     def dist(self, p1, p2):
