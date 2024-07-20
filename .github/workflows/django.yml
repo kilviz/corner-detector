@@ -30,5 +30,5 @@ jobs:
         python backend/manage.py test
     - name: Run flake8
       run: |
-        flake8 /backend
+        flake8 backend/
 
